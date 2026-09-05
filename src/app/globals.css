@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f8f3ec;
+  --bg-2: #f1e8dc;
+  --surface: #ffffff;
+  --surface-2: #efe3d5;
+
+  --accent: #c6a177;
+  --accent-light: #d9bfa0;
+  --accent-dim: #9c7c56;
+  --accent-rose: #d9b8ae;
+
+  --text: #221a14;
+  --text-dim: rgba(34, 26, 20, 0.62);
+  --text-muted: rgba(34, 26, 20, 0.42);
+
+  --line: rgba(198, 161, 119, 0.18);
+  --line-hover: rgba(198, 161, 119, 0.4);
+
+  --dark-bg: #0f0b08;
+  --dark-surface: #1a140f;
+  --dark-line: rgba(198, 161, 119, 0.22);
+  --dark-text: #f8f3ec;
+  --dark-text-dim: rgba(248, 243, 236, 0.62);
+
+  --shadow-card: 0 24px 60px rgba(34, 26, 20, 0.1);
+  --shadow-deep: 0 30px 80px rgba(0, 0, 0, 0.45);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-curtain: cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-rose: var(--accent-rose);
+
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-text-muted: var(--text-muted);
+
+  --color-line: var(--line);
+  --color-line-hover: var(--line-hover);
+
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-line: var(--dark-line);
+  --color-dark-text: var(--dark-text);
+  --color-dark-text-dim: var(--dark-text-dim);
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+}
+
+/*
+ * Everything below is wrapped in Tailwind's `base`/`components` layers.
+ * CSS Cascade Layers give unlayered rules priority over ANY layered rule
+ * regardless of specificity — a plain `a { color: inherit }` here would
+ * silently beat a Tailwind utility like `text-bg` on a link (which is
+ * emitted inside `@layer utilities`), no matter how specific the utility
+ * selector is. Layering these rules lets utility classes override them
+ * as expected.
+ */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--bg);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--dark-bg);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* Grain overlay */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+    font-weight: 600;
+  }
+
+  .section-label.on-dark {
+    color: var(--accent-light);
+  }
+
+  /* Reveal line masks */
+  .reveal-mask {
+    overflow: hidden;
+    display: block;
+  }
+
+  .reveal-line {
+    display: inline-block;
+    will-change: transform, opacity, filter;
+  }
+
+  /* Underline link */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 400ms var(--ease-out);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Lenis */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
