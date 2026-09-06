@@ -1,4 +1,4 @@
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 export type CollectionSlug = "heritage" | "editions-rares" | "essentiels";
 
@@ -17,7 +17,7 @@ export const collections: Collection[] = [
     tagline: "Les fragrances fondatrices de la maison",
     description:
       "Composées à partir des carnets originaux de la maison, ces fragrances portent l'écriture olfactive qui a fondé AURÉLIS : des accords denses, sculptés, pensés pour traverser le temps sans jamais se démoder.",
-    image: placeholder("aurelis-collection-heritage-v3", 1800, 2200),
+    image: localAsset("/images/collections/heritage.jpg"),
   },
   {
     slug: "editions-rares",
@@ -25,7 +25,7 @@ export const collections: Collection[] = [
     tagline: "Séries limitées, matières précieuses",
     description:
       "Une collection confidentielle, produite en quantités restreintes, où chaque flacon numéroté explore une matière rare — oud sauvage, iris de Toscane, ambre gris — dans une composition qui ne sera jamais reproduite à l'identique.",
-    image: placeholder("aurelis-collection-rares", 1800, 2200),
+    image: localAsset("/images/collections/rares.jpg"),
   },
   {
     slug: "essentiels",
@@ -33,7 +33,7 @@ export const collections: Collection[] = [
     tagline: "La signature quotidienne de la maison",
     description:
       "Pensée pour accompagner chaque jour, cette collection réunit les sillages les plus portés d'AURÉLIS — un vestiaire olfactif complet, du matin clair au soir profond.",
-    image: placeholder("aurelis-collection-essentiels", 1800, 2200),
+    image: localAsset("/images/collections/essentiels.jpg"),
   },
 ];
 

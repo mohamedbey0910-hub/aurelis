@@ -1,14 +1,14 @@
 import { ParallaxImage } from "@/components/animations/parallax-image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { SectionLabel } from "@/components/ui/section-label";
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 export function Craftsmanship() {
   return (
     <section className="bg-bg px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
         <ParallaxImage
-          src={placeholder("aurelis-savoir-faire", 1600, 2000)}
+          src={localAsset("/images/maison/craftsmanship.jpg")}
           alt="Un parfumeur AURÉLIS ajustant une composition en laboratoire"
           className="aspect-[4/5] w-full"
           sizes="(min-width: 768px) 45vw, 100vw"

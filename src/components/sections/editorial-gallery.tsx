@@ -1,12 +1,12 @@
 import { SectionLabel } from "@/components/ui/section-label";
 import { TreatedImage } from "@/components/ui/treated-image";
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 const items = [
-  { seed: "aurelis-campagne-1", ratio: "aspect-[3/4]", span: "md:col-span-2 md:row-span-2" },
-  { seed: "aurelis-campagne-2-v3", ratio: "aspect-square", span: "" },
-  { seed: "aurelis-campagne-3", ratio: "aspect-[4/3]", span: "" },
-  { seed: "aurelis-campagne-4", ratio: "aspect-[16/9]", span: "md:col-span-2" },
+  { src: "/images/campagne/gallery1.jpg", ratio: "aspect-[3/4]", span: "md:col-span-2 md:row-span-2" },
+  { src: "/images/campagne/gallery2.jpg", ratio: "aspect-square", span: "" },
+  { src: "/images/campagne/gallery3.jpg", ratio: "aspect-[4/3]", span: "" },
+  { src: "/images/campagne/gallery4.jpg", ratio: "aspect-[16/9]", span: "md:col-span-2" },
 ];
 
 export function EditorialGallery({
@@ -25,11 +25,11 @@ export function EditorialGallery({
         <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {items.map((item) => (
             <div
-              key={item.seed}
+              key={item.src}
               className={`relative overflow-hidden ${item.ratio} ${item.span}`}
             >
               <TreatedImage
-                src={placeholder(item.seed, 1400, 1400)}
+                src={localAsset(item.src)}
                 alt="Image de campagne AURÉLIS"
                 fill
                 sizes="(min-width: 768px) 40vw, 100vw"

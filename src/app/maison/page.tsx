@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { RevealText } from "@/components/animations/reveal-text";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SectionLabel } from "@/components/ui/section-label";
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "La Maison",
@@ -18,8 +18,8 @@ export default function MaisonPage() {
     <>
       <section className="relative flex h-[70svh] min-h-[560px] w-full items-end overflow-hidden bg-dark-bg">
         <ParallaxImage
-          src={placeholder("aurelis-maison-hero-v4", 2200, 1600)}
-          alt="L'atelier de la maison AURÉLIS"
+          src={localAsset("/images/maison/hero.jpg")}
+          alt="Fleurs et matières premières de la maison AURÉLIS"
           className="absolute inset-0 h-full w-full"
           dark
           strength={10}
@@ -76,8 +76,8 @@ export default function MaisonPage() {
       <section className="bg-bg px-6 py-24 md:px-12 md:py-32">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 md:grid-cols-2 md:gap-20">
           <ParallaxImage
-            src={placeholder("aurelis-fondateur-v3", 1600, 2000)}
-            alt="Le parfumeur-fondateur de la maison AURÉLIS"
+            src={localAsset("/images/maison/founder.jpg")}
+            alt="Résine ambrée sur bois, l'une des matières premières travaillées par la maison"
             className="aspect-[4/5] w-full"
             sizes="(min-width: 768px) 45vw, 100vw"
           />

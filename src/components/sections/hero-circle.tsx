@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap, registerGsap } from "@/lib/gsap-config";
 import { Button } from "@/components/ui/button";
 import { TreatedImage } from "@/components/ui/treated-image";
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 export function HeroCircle() {
   const labelRef = useRef<HTMLSpanElement | null>(null);
@@ -81,8 +81,8 @@ export function HeroCircle() {
     <section className="relative flex h-[100svh] min-h-[700px] w-full items-end overflow-hidden bg-dark-bg">
       <div className="absolute inset-0">
         <TreatedImage
-          src={placeholder("aurelis-hero-v5", 2400, 3000)}
-          alt="Flacon AURÉLIS mis en scène dans une lumière dorée"
+          src={localAsset("/images/perfumes/nuit-blanche.jpg")}
+          alt="Flacon AURÉLIS Nuit Blanche mis en scène"
           fill
           priority
           dark

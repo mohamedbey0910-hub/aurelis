@@ -6,7 +6,7 @@ import { RevealText } from "@/components/animations/reveal-text";
 import { CtaBand } from "@/components/sections/cta-band";
 import { SectionLabel } from "@/components/ui/section-label";
 import { testimonials } from "@/data/testimonials";
-import { placeholder } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Campagne",
@@ -18,7 +18,7 @@ export default function CampagnePage() {
     <>
       <section className="relative flex h-[85svh] min-h-[600px] w-full items-end overflow-hidden bg-dark-bg">
         <ParallaxImage
-          src={placeholder("aurelis-campagne-hero-v2", 2400, 1800)}
+          src={localAsset("/images/campagne/hero.jpg")}
           alt="Campagne AURÉLIS — Lumière d'Automne"
           className="absolute inset-0 h-full w-full"
           dark

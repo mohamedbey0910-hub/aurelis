@@ -1,4 +1,4 @@
-import { placeholder, localAsset } from "@/lib/images";
+import { localAsset } from "@/lib/images";
 import type { CollectionSlug } from "@/data/collections";
 
 export type Perfume = {
@@ -40,8 +40,8 @@ export const perfumes: Perfume[] = [
     volume: "75 ml",
     image: localAsset("/images/perfumes/ombre-doree.jpg"),
     gallery: [
-      placeholder("aurelis-ombre-doree-detail-v4", 1600, 2000),
-      placeholder("aurelis-ombre-doree-scene", 1800, 1300),
+      localAsset("/images/perfumes/ombre-doree-detail.jpg"),
+      localAsset("/images/perfumes/ombre-doree-scene.jpg"),
     ],
   },
   {
@@ -63,8 +63,8 @@ export const perfumes: Perfume[] = [
     volume: "50 ml",
     image: localAsset("/images/perfumes/fleur-de-soie.jpg"),
     gallery: [
-      placeholder("aurelis-fleur-de-soie-detail", 1600, 2000),
-      placeholder("aurelis-fleur-de-soie-scene", 1800, 1300),
+      localAsset("/images/perfumes/fleur-de-soie-detail.jpg"),
+      localAsset("/images/perfumes/fleur-de-soie-scene.jpg"),
     ],
   },
   {
@@ -86,8 +86,8 @@ export const perfumes: Perfume[] = [
     volume: "75 ml — édition numérotée",
     image: localAsset("/images/perfumes/nuit-blanche.jpg"),
     gallery: [
-      placeholder("aurelis-nuit-blanche-detail", 1600, 2000),
-      placeholder("aurelis-nuit-blanche-scene", 1800, 1300),
+      localAsset("/images/perfumes/nuit-blanche-detail.jpg"),
+      localAsset("/images/campagne/hero.jpg"),
     ],
   },
   {
@@ -109,8 +109,8 @@ export const perfumes: Perfume[] = [
     volume: "50 ml",
     image: localAsset("/images/perfumes/rosee-poudree.jpg"),
     gallery: [
-      placeholder("aurelis-rosee-poudree-detail", 1600, 2000),
-      placeholder("aurelis-rosee-poudree-scene", 1800, 1300),
+      localAsset("/images/perfumes/rosee-poudree-detail.jpg"),
+      localAsset("/images/campagne/gallery1.jpg"),
     ],
   },
   {
@@ -132,8 +132,8 @@ export const perfumes: Perfume[] = [
     volume: "75 ml",
     image: localAsset("/images/perfumes/velours-noir.jpg"),
     gallery: [
-      placeholder("aurelis-velours-noir-detail", 1600, 2000),
-      placeholder("aurelis-velours-noir-scene-v3", 1800, 1300),
+      localAsset("/images/perfumes/velours-noir-detail.jpg"),
+      localAsset("/images/maison/craftsmanship.jpg"),
     ],
   },
   {
@@ -153,10 +153,10 @@ export const perfumes: Perfume[] = [
     },
     price: 295,
     volume: "50 ml — édition numérotée",
-    image: placeholder("aurelis-secret-de-santal", 1400, 1800),
+    image: localAsset("/images/perfumes/secret-de-santal.jpg"),
     gallery: [
-      placeholder("aurelis-secret-de-santal-detail", 1600, 2000),
-      placeholder("aurelis-secret-de-santal-scene", 1800, 1300),
+      localAsset("/images/notes/santal.jpg"),
+      localAsset("/images/notes/vanille.jpg"),
     ],
   },
 ];
