@@ -1,4 +1,4 @@
-import { placeholder } from "@/lib/images";
+import { placeholder, localAsset } from "@/lib/images";
 import type { CollectionSlug } from "@/data/collections";
 
 export type Perfume = {
@@ -38,7 +38,7 @@ export const perfumes: Perfume[] = [
     },
     price: 210,
     volume: "75 ml",
-    image: placeholder("aurelis-ombre-doree", 1400, 1800),
+    image: localAsset("/images/perfumes/ombre-doree.jpg"),
     gallery: [
       placeholder("aurelis-ombre-doree-detail-v4", 1600, 2000),
       placeholder("aurelis-ombre-doree-scene", 1800, 1300),
@@ -61,7 +61,7 @@ export const perfumes: Perfume[] = [
     },
     price: 185,
     volume: "50 ml",
-    image: placeholder("aurelis-fleur-de-soie", 1400, 1800),
+    image: localAsset("/images/perfumes/fleur-de-soie.jpg"),
     gallery: [
       placeholder("aurelis-fleur-de-soie-detail", 1600, 2000),
       placeholder("aurelis-fleur-de-soie-scene", 1800, 1300),
@@ -84,7 +84,7 @@ export const perfumes: Perfume[] = [
     },
     price: 340,
     volume: "75 ml — édition numérotée",
-    image: placeholder("aurelis-nuit-blanche", 1400, 1800),
+    image: localAsset("/images/perfumes/nuit-blanche.jpg"),
     gallery: [
       placeholder("aurelis-nuit-blanche-detail", 1600, 2000),
       placeholder("aurelis-nuit-blanche-scene", 1800, 1300),
@@ -107,7 +107,7 @@ export const perfumes: Perfume[] = [
     },
     price: 175,
     volume: "50 ml",
-    image: placeholder("aurelis-rosee-poudree", 1400, 1800),
+    image: localAsset("/images/perfumes/rosee-poudree.jpg"),
     gallery: [
       placeholder("aurelis-rosee-poudree-detail", 1600, 2000),
       placeholder("aurelis-rosee-poudree-scene", 1800, 1300),
@@ -130,7 +130,7 @@ export const perfumes: Perfume[] = [
     },
     price: 225,
     volume: "75 ml",
-    image: placeholder("aurelis-velours-noir", 1400, 1800),
+    image: localAsset("/images/perfumes/velours-noir.jpg"),
     gallery: [
       placeholder("aurelis-velours-noir-detail", 1600, 2000),
       placeholder("aurelis-velours-noir-scene-v3", 1800, 1300),
