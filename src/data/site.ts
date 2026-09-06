@@ -3,7 +3,7 @@ export const site = {
   baseline: "Maison de Parfum",
   description:
     "AURÉLIS crée des fragrances élégantes et raffinées, inspirées par l'art, le voyage et les émotions.",
-  url: "https://aurelis.example.com",
+  url: "https://mohamedbey0910-hub.github.io/aurelis",
   email: "maison@aurelis-parfums.fr",
   phone: "+33 1 42 96 10 20",
   address: "14 rue de la Paix, 75002 Paris",
